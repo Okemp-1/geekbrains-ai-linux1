@@ -1,0 +1,29 @@
+1. Создал репу ggekbrains-ai-linux1
+
+2. установил Oracle VM VirtualBox менеджер
+установил Ubuntu (64-bit)
+поставил их в одну сеть - в настройках VM - Network изменил NAT на Bridged Adapter и выполнил sudo reboot
+
+3. установил пакеты gcc, make и perl с помощью sudo apt install gcc make perl
+
+4. Протестировал команды
+man - вывод справочной страницы, например man man - выдаст справку по команде man, а man apt - справку по менеджеру пакетов apt
+cd - управление директориями, например, cd / - вернёт в корень файловой системы, cd /media - переместит в папку media
+ls - покажет список файлов
+hostname - показывает имя компьютера и имя домена
+whoami - показывает текущего пользователя
+pwd - print working directory возвращает текущую директорию
+ip - группа команд, отвечающих за ip, например, ip a покажет текущий ip адрес виртуальной машины
+sudo - повышение уровня прав при выполнении операции до root
+reboot - перезагрузка, например, с помощью sudo reboot можно перезапустить ubuntu
+poweroff - отключает питание виртуальной машины
+apt или apt-get - менджер пакетов, например, sudo apt search будет искать нужный пакет, а sudo apt install его установит
+
+5. Настроил SSH-соединение
+выполнил sudo apt install openssh-server, в терминале хостовой ОС выполнил ssh username@ipadress (можно же в домашке не писать реальный юзернэйм и айпишник?)
+выполнил sudo ufw allow ssh - теперь файрвол разрешает подключение по ssh
+создал резервный конфиг  sudo cp /etc/ssh/sshd_config /etc/ssh/sshd_config.factory-defaults
+открыл конфиг sudo vi /etc/ssh/sshd_config
+пытался заменить port 22 на другой, но чё-т не пошло( 
+
+
